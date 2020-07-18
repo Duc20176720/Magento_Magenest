@@ -1,0 +1,52 @@
+<?php
+$product = $block->getProduct();
+$wedding = $block->getWeddingEvent($product->getWeddingId());
+$title = $wedding->getTitle();
+$bride_firstname = $wedding->getBrideFirstname();
+$bride_lastname = $wedding->getBrideLastname();
+$groom_firstname = $wedding->getGroomFirstname();
+$groom_lastname = $wedding->getGroomLastname();
+$bride_email = $wedding->getBrideEmail();
+$groom_email = $wedding->getGroomEmail();
+
+?>
+
+<div>
+    <form>
+        Bride's email :
+        <input type="text" id="bride_email" name="bride_email" value=" <?php echo $bride_email; ?>"><br>
+        Groom's email :
+        <input type="text" id="groom_email" name="groom_email" value=" <?php echo $groom_email; ?>"><br>
+        <input type="submit" id="done" value="Done">
+    </form>
+
+</div>
+
+<div id="alert" style="display: none ; background-color: lavenderblush" align="center">
+
+    <p> <?php echo $title ?></p><br>
+    <form>
+        <p> Bride's name : <?php echo $bride_firstname + $bride_lastname; ?></p>
+        <input type="radio" id="send_bride_email" name="send_bride" value="yes">
+        <label for="male">Send email</label><br>
+        <p> Groom's name : <?php echo $groom_firstname + $groom_lastname; ?></p>
+        <input type="radio" id="send_groom_email" name="send_groom" value="yes">
+        <label for="male">Send email</label><br>
+
+
+        <p> Amount : </p>
+        <input type="text" id="amount" name="changePrice" value=" "><br>
+
+        <input type="submit" value="Add to Cart">
+    </form>
+
+
+</div>
+<script>
+    require(['jquery', 'Magento_Ui/js/modal/modal'], function ($, modal) {
+        var popup = modal({type: 'popup'}, $('#alert'));
+        $('#done').on('click', function () {
+            $('#alert').modal('openModal');
+        });
+    });
+</script>

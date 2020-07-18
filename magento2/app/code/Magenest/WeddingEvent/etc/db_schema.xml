@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <table name="magenest_wedding_event" resource="default" engine="innodb" comment="Magenest Wedding Event Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="varchar" name="commission" nullable="false" length="255" comment="Commission"/>
+        <column xsi:type="varchar" name="bride_firstname" nullable="false" length="255" comment="Bride First Name"/>
+        <column xsi:type="varchar" name="bride_lastname" nullable="false" length="255" comment="Bride Last Name"/>
+        <column xsi:type="varchar" name="bride_email" nullable="false" length="255" comment="Bride Email"/>
+        <column xsi:type="varchar" name="sent_to_bride" nullable="false" length="255" comment="Send To Bride"/>
+        <column xsi:type="varchar" name="groom_firstname" nullable="false" length="255" comment="Groom First Name"/>
+        <column xsi:type="varchar" name="groom_lastname" nullable="false" length="255" comment="Groom Last Name"/>
+        <column xsi:type="varchar" name="groom_email" nullable="false" length="255" comment="Groom Email"/>
+        <column xsi:type="varchar" name="sent_to_groom" nullable="false" length="255" comment="Send To Groom"/>
+        <column xsi:type="varchar" name="message" nullable="false" length="255" comment="Message"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

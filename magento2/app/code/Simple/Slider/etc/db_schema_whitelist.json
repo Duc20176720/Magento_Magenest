@@ -1,0 +1,25 @@
+{
+    "magenest_simpleslider_slider": {
+        "column": {
+            "slider_id": true,
+            "name": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "magenest_simpleslider_banner": {
+        "column": {
+            "banner_id": true,
+            "slider_id": true,
+            "alt_image": true,
+            "image": true,
+            "content_image": true,
+            "url_redirect": true,
+            "sort_order": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

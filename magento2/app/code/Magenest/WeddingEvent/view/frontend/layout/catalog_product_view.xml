@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="Magento_Catalog::catalog_product_view.xml"/>
+    <body>
+        <referenceContainer name="product.info.main">
+            <block class="Magenest\WeddingEvent\Block\Frontend\Product\WeddingEvent"
+                   name="wedding_event"
+                   template="Magenest_WeddingEvent::wedding.phtml"
+                   before="product.price.tier"/>
+        </referenceContainer>
+    </body>
+</page>

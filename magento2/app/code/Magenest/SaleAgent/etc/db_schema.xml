@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <table name="magenest_sale_agent" resource="default" engine="innodb" comment="Magenest Sale Agent Table">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="int" name="order_id" padding="10" unsigned="true" nullable="false"  comment="Order ID"/>
+        <column xsi:type="int" name="order_item_id" padding="10" unsigned="true" nullable="false" comment="Order Item ID"/>
+        <column xsi:type="varchar" name="order_item_sku" nullable="false" length="255" comment="Order Item SKU"/>
+        <column xsi:type="int" name="order_item_price" nullable="false"  comment="Order Item Price"/>
+        <column xsi:type="int" name="commission_percent" nullable="false"  comment="Commission Percent"/>
+        <column xsi:type="int" name="commission_value" nullable="false"  comment="Commission Value"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>
